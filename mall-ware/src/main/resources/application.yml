@@ -1,0 +1,17 @@
+# mysql
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    #MySQL配置
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.56.10:3306/gulimall_wms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+#告诉mubatis-plus  sql映射文件的位置
+mybatis-plus:
+  mapperLocations: classpath:mapper/**/*.xml
+  #调整id自增,以及当数据量大的时候做分库分表
+  global-config:
+    db-config:
+      id-type: auto
